@@ -1,0 +1,28 @@
+<#	
+	.NOTES
+	===========================================================================
+	 Created with: 	SAPIEN Technologies, Inc., PowerShell Studio 2019 v5.6.156
+	 Created on:   	8/23/2019 11:33 AM
+	 Created by:   	Thaddeus Pearson
+	 Organization: 	City of Missoula
+	 Filename:     	Get AD Group Memebers
+	===========================================================================
+	.DESCRIPTION
+		uses the active directory powershell module to dump the members of a group into a .csv
+#>
+
+# gather the group name for searching and place in variable targetGroup
+$targetGroup = Read-Host -Prompt "Enter the AD group name"
+
+$resultName = Read-Host -Prompt "Enter your output filename"
+
+# run the cmdlet
+Get-ADGroupMember -Identity $targetGroup | select name | Export-Csv -Path $env:USERPROFILE\Desktop\$resultName.csv
+
+Write-Host -ForegroundColor Green "Your output file is saved in $env:USERPROFILE\Desktop"
+
+Pause
+
+Invoke-Item -Path $env:USERPROFILE\Desktop\$resultName.csv
+
+exit 
