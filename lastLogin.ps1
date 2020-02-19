@@ -4,7 +4,7 @@
 	 Created with: 	SAPIEN Technologies, Inc., PowerShell Studio 2018 v5.5.152
 	 Created on:   	6/29/2018 4:51 PM
 	 Created by:   	Thaddeus Pearson
-	 Organization: 	City of Missoula
+	 Organization: 	
 	 Filename:     	LastLogon
 	===========================================================================
 	.DESCRIPTION
